@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">MyHkView</string>
+    <string name="app_name">HuDepTrai</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_dvr_camera_live">DvrCameraLiveActivity</string>
 </resources>
