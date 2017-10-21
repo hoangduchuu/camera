@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/thuvien/HCNetSDK/HCNetSDK.iml" filepath="$PROJECT_DIR$/thuvien/HCNetSDK/HCNetSDK.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MyHkView.iml" filepath="$PROJECT_DIR$/MyHkView.iml" />
+      <module fileurl="file://$PROJECT_DIR$/thuvien/PlayerSDK/PlayerSDK.iml" filepath="$PROJECT_DIR$/thuvien/PlayerSDK/PlayerSDK.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/thuvien/thuvien.iml" filepath="$PROJECT_DIR$/thuvien/thuvien.iml" />
+    </modules>
+  </component>
+</project>
