@@ -131,4 +131,5 @@ public class DvrCameraSurfaceView extends SurfaceView implements SurfaceHolder.C
     @Override
     public void surfaceDestroyed(SurfaceHolder holder) {
     }
+
 }

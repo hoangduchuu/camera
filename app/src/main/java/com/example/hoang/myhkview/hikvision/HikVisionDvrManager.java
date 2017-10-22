@@ -1,6 +1,8 @@
 package com.example.hoang.myhkview.hikvision;
 
 import android.util.Log;
+import android.view.SurfaceView;
+import android.view.View;
 
 
 import com.example.hoang.myhkview.DebugTools;
@@ -16,9 +18,10 @@ import com.hikvision.netsdk.NET_DVR_JPEGPARA;
 import com.hikvision.netsdk.RealPlayCallBack;
 import com.hikvision.netsdk.SDKError;
 
+
 import java.util.ArrayList;
 
-public class HikVisionDvrManager {
+public class HikVisionDvrManager implements DvrCameraSurfaceView.OnAttachStateChangeListener{
     private static final String TAG = "HikVisionDvrManager";
 
     // Move this to DvrDeviceInfo
@@ -457,5 +460,17 @@ public class HikVisionDvrManager {
         Log.d("leng", String.valueOf(data3) +"::::::::"+ String.valueOf(SizeOfJPEGByteArray(data3)) + "----data.length();: "+data3.length);
 
         return data3;
+    }
+
+
+    @Override
+    public void onViewAttachedToWindow(View v) {
+        Log.d("onViewAttachedToWindow", v.toString() + "onViewAttachedToWindow");
+    }
+
+    @Override
+    public void onViewDetachedFromWindow(View v) {
+        Log.d("onViewAttachedToWindow", v.toString() + "onViewDetachedFromWindow");
+
     }
 }

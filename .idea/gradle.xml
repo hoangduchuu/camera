@@ -9,9 +9,6 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/thuvien" />
-            <option value="$PROJECT_DIR$/thuvien/HCNetSDK" />
-            <option value="$PROJECT_DIR$/thuvien/PlayerSDK" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

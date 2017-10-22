@@ -7,8 +7,10 @@ import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -51,10 +53,9 @@ public class DvrCameraFullScreenPreview extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 //                Toast.makeText(DvrCameraFullScreenPreview.this, "ccc", Toast.LENGTH_SHORT).show();
-    image.setBackgroundColor(Color.BLUE);
+                image.setBackgroundColor(Color.BLUE);
 
                 initCapture();
-
 
 
             }
@@ -73,9 +74,10 @@ public class DvrCameraFullScreenPreview extends AppCompatActivity {
 
     }
 
-int i = 0;
+    int i = 0;
+
     private void initCapture() {
-        if (dvrManager == null){
+        if (dvrManager == null) {
             dvrManager = HikVisionDvrManager.getInstance();
         }
 //        dvrManager.capture();
@@ -99,7 +101,9 @@ int i = 0;
 
     @Override
     public void onBackPressed() {
+        overridePendingTransition(R.anim.anim_slide_in_left, R.anim.anim_slide_out_left);
         stopStreaming();
+
     }
 
     private void loadExtras() {
@@ -129,6 +133,7 @@ int i = 0;
     }
 
     private void stopStreaming() {
+        Log.d("toptop", "stoping");
         // Cancel DVR SDK initialisation, if it is happening
         if (mTask != null && !mTask.getStatus().equals(AsyncTask.Status.FINISHED)) {
             mTask.cancel(true);
@@ -148,12 +153,12 @@ int i = 0;
 
         @Override
         protected String doInBackground(Void... params) {
-            if (isCancelled()){
+            if (isCancelled()) {
                 return "OK";
             }
 
             // Initialise Network SDK
-            String errorMessage =  dvrManager.init();
+            String errorMessage = dvrManager.init();
 
             if (errorMessage != null)
                 return errorMessage;
@@ -193,6 +198,7 @@ int i = 0;
             textErrorMessage.setText(errorMessage);
         }
     }
+
     @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR1)
     protected int sizeOf(Bitmap data) {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB_MR1) {
@@ -201,4 +207,7 @@ int i = 0;
             return data.getByteCount();
         }
     }
+
+
+
 }

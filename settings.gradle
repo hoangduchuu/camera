@@ -1,1 +1,1 @@
-include ':app', 'thuvien:HCNetSDK', 'thuvien:PlayerSDK'
+include ':app'

@@ -44,7 +44,7 @@ public class DvrCamerasListActivity extends AppCompatActivity {
 
                     startActivity(intent);
 
-                    //overridePendingTransition(R.anim.slide_activity_in_right, R.anim.slide_activity_out_right);
+                    overridePendingTransition(R.anim.rotate_out,R.anim.rotate_in);
                 }
             }
         });
@@ -55,15 +55,15 @@ public class DvrCamerasListActivity extends AppCompatActivity {
         cameras = new ArrayList<>();
 
         DvrCamera camera1 = new DvrCamera(1, "Camera 1");
-        DvrCamera camera2 = new DvrCamera(2, "Camera 2");
-        DvrCamera camera3 = new DvrCamera(1, "Camera 3");
-        DvrCamera camera4 = new DvrCamera(2, "Camera 4");
+//        DvrCamera camera2 = new DvrCamera(2, "Camera 2");
+//        DvrCamera camera3 = new DvrCamera(1, "Camera 3");
+//        DvrCamera camera4 = new DvrCamera(2, "Camera 4");
 
         camera1.setIsConnected(true);
 
         cameras.add(camera1);
-        cameras.add(camera2);
-        cameras.add(camera3);
-        cameras.add(camera4);
+//        cameras.add(camera2);
+//        cameras.add(camera3);
+//        cameras.add(camera4);
     }
 }
