@@ -25,7 +25,7 @@ public class HikVisionDvrManager implements DvrCameraSurfaceView.OnAttachStateCh
     private static final String TAG = "HikVisionDvrManager";
 
     // Move this to DvrDeviceInfo
-    private static final String DVR_IP = "192.168.1.113";
+    private static final String DVR_IP = "192.168.1.123";
     private static final int DVR_PORT = 8000;
 
     private static   DvrDeviceInfo    deviceInfo;
@@ -455,22 +455,10 @@ public class HikVisionDvrManager implements DvrCameraSurfaceView.OnAttachStateCh
     }
 
     public byte[] capture(){
-        byte[] data3 = new byte[300000];
-        hcNetSdk.NET_DVR_CaptureJPEGPicture_NEW(userId,1,new NET_DVR_JPEGPARA(), data3,300000, INT_PTR1);
-        Log.d("leng", String.valueOf(data3) +"::::::::"+ String.valueOf(SizeOfJPEGByteArray(data3)) + "----data.length();: "+data3.length);
+        hcNetSdk.NET_DVR_CaptureJPEGPicture_NEW(userId,1,new NET_DVR_JPEGPARA(), data,300000, INT_PTR1);
+        Log.d("leng", String.valueOf(data) +"::::::::"+ String.valueOf(SizeOfJPEGByteArray(data)) + "----data.length();: "+data.length);
 
-        return data3;
+        return data;
     }
 
-
-    @Override
-    public void onViewAttachedToWindow(View v) {
-        Log.d("onViewAttachedToWindow", v.toString() + "onViewAttachedToWindow");
-    }
-
-    @Override
-    public void onViewDetachedFromWindow(View v) {
-        Log.d("onViewAttachedToWindow", v.toString() + "onViewDetachedFromWindow");
-
-    }
 }
